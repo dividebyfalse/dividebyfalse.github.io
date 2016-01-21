@@ -1,106 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Your name</title>
-    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <link>http://localhost:4000/</link>
-    <description>Some descriptions of yourself.</description>
-    <pubDate>Wed, 20 Jan 2016 23:01:42 +0800</pubDate>
+    <title>Блог ноющего программиста</title>
+    <atom:link href="http://localhost:400/feed.xml" rel="self" type="application/rss+xml"/>
+    <link>http://localhost:400/</link>
+    <description>Обо всём и сразу.</description>
+    <pubDate>Fri, 22 Jan 2016 00:56:54 +0800</pubDate>
     
       
 
 
 
       <item>
-        <title>Hello, Jekyll and QckTheme | Your name</title>
+        <title>Hello everyone! | Блог ноющего программиста</title>
         
         <image>
-          <url>http://jekyllrb.com/img/logo-2x.png</url>
-          <title>Hello, Jekyll and QckTheme</title>
-          <link>http://localhost:4000/2015/01/01/hello/</link>
+          <url>http://demiart.ru/forum/index.php?act=module&module=gallery&cmd=viewimage&img=64379</url>
+          <title>Hello everyone!</title>
+          <link>http://localhost:400/2016/01/22/hello_everyone/</link>
         </image>
         
-        <link>http://localhost:4000/2015/01/01/hello/</link>
-        <guid isPermaLink="true">http://localhost:4000/2015/01/01/hello/</guid>
-        <description>&lt;p&gt;You can use most of standard Markdown features.&lt;/p&gt;
+        <link>http://localhost:400/2016/01/22/hello_everyone/</link>
+        <guid isPermaLink="true">http://localhost:400/2016/01/22/hello_everyone/</guid>
+        <description>&lt;h2 id=&quot;section&quot;&gt;Всем привет!&lt;/h2&gt;
+&lt;p&gt;Я наконец-то сделал это! Завёл собственный бложик, который могу вести прямо в &lt;strong&gt;&lt;a href=&quot;/search?t=emacs&quot;&gt;#emacs&lt;/a&gt;&lt;/strong&gt; без привязки к какому-либо сервису с тяжкой возможностью кастомизации. Да ещё и без капельки серверного кода. Как я это сделал? Есть такая замечательная штука как &lt;strong&gt;&lt;a href=&quot;/search?t=jekyll&quot;&gt;#jekyll&lt;/a&gt;&lt;/strong&gt;. Про него есть хорошая статья на &lt;strong&gt;&lt;a href=&quot;http://habrahabr.ru/post/207650/&quot;&gt;Хабре&lt;/a&gt;&lt;/strong&gt;. Когда сам полностью разберусь во всей магии, которую творит это чудо, обязательно напишу пост. Вкратце &lt;strong&gt;jekyll&lt;/strong&gt; - генератор &lt;strong&gt;СТАТИЧЕСКИХ&lt;/strong&gt; сайтов. Свой твиттер сделать на нем конечно вряд ли получится, но блог - запросто! (&lt;strong&gt;Jekyll&lt;/strong&gt; и позиционируется как генератор блогов). 
+&lt;!--more--&gt;&lt;/p&gt;
 
-&lt;h2 id=&quot;list&quot;&gt;List&lt;/h2&gt;
+&lt;p&gt;Свой кусочек в пучине интернета я позиционирую как ненавязчивые разговоры сразу и обо всём, но с максимальными подробностями на сложных темах. В первую очередь - это заметки для самого себя, которые помогут в будущем не наступать на те же грабли. Ну и я считаю, что грех не делиться таким. К тому же, в отличие от твиттера, блог читают добровольно :))0) В дополнение ко всему прочему, у меня на носу курсач, который надо наполнять словами. А блог - отличное место научиться этому.&lt;/p&gt;
 
-&lt;ul&gt;
-  &lt;li&gt;foo&lt;/li&gt;
-  &lt;li&gt;bar
-    &lt;ul&gt;
-      &lt;li&gt;indentation
-        &lt;ul&gt;
-          &lt;li&gt;nesting indentation&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;indentation&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;buz&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;Идея блога ко мне пришла от постоянного возмущения высо&lt;strong&gt;коко&lt;/strong&gt;мерию технарей, которые пишут статьи/документацию но при этом упускают мелочи, которые для автора может быть и &lt;em&gt;очевидны&lt;/em&gt;, но мы то с вами знаем, что это не так. Я ни в коему случае не претендую на мастера объяснений, но я буду очень стараться, обещаю.&lt;/p&gt;
 
-&lt;!--more--&gt;
+&lt;p&gt;Итак, первым же постом хочу сразу же определить теги, которые я планирую использовать + краткое описание. Поехали!&lt;/p&gt;
 
-&lt;h2 id=&quot;quote&quot;&gt;Quote&lt;/h2&gt;
+&lt;h3 id=&quot;emacssearchtemacs&quot;&gt;&lt;a href=&quot;/search?t=emacs&quot;&gt;#emacs&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;http://ergoemacs.org/emacs/emacs_logo/emacs_logo_no_border.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-&lt;blockquote&gt;
-  &lt;p&gt;quote&lt;/p&gt;
+&lt;p&gt;Описание/восхваление/признание в любви лучшему в мире текстовому редактору! Тонкости настройки &lt;em&gt;.emacs&lt;/em&gt;, используемые и неиспользуемые плагины, бесконечные рассказы о том, что емакс может заменить вам все программы на компьютере. Надеюсь когда-нибудь и мой дорогой читатель (если такой вдруг появится) перейдет на эту перелесть и обратится в веру его святейшества Столлмана.&lt;/p&gt;
 
-  &lt;blockquote&gt;
-    &lt;p&gt;nesting quote&lt;/p&gt;
-  &lt;/blockquote&gt;
+&lt;h3 id=&quot;musicsearchtmusic-guitarsearchtguitar&quot;&gt;&lt;a href=&quot;/search?t=music&quot;&gt;#music&lt;/a&gt; &lt;a href=&quot;/search?t=guitar&quot;&gt;#guitar&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Спонтанные посты о музыке и новые открытия в этом удивительном мире, который я как никогда прочувствовал в прошлом году. Разговоры о песнях, периодические посты о прогрессе в обучении игры на гитаре, возможно c рассказами о возникших трудностях.&lt;/p&gt;
 
-  &lt;p&gt;quote&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;h3 id=&quot;jekyllsearchtjekyll&quot;&gt;&lt;a href=&quot;/search?t=jekyll&quot;&gt;#jekyll&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Рассказы о технической стороне блога. Что и как работает, что и как поменялось или поменяется. В планах полностью переписать текущий шаблон и добавить возможность отслеживать читаемые книги.&lt;/p&gt;
 
-&lt;h2 id=&quot;strikethrough&quot;&gt;Strikethrough&lt;/h2&gt;
+&lt;h3 id=&quot;progsearchtprog-golangsearchtgolang-javasearchtjava-scalasearchtscala-playsearchtplay-bitrixsearchtbitrix-iossearchtios-androidsearchtandroid-phpsearchtphp&quot;&gt;&lt;a href=&quot;/search?t=prog&quot;&gt;#prog&lt;/a&gt; &lt;a href=&quot;/search?t=golang&quot;&gt;#golang&lt;/a&gt; &lt;a href=&quot;/search?t=java&quot;&gt;#java&lt;/a&gt; &lt;a href=&quot;/search?t=scala&quot;&gt;#scala&lt;/a&gt; &lt;a href=&quot;/search?t=play!&quot;&gt;#play!&lt;/a&gt; &lt;a href=&quot;/search?t=bitrix&quot;&gt;#bitrix&lt;/a&gt; &lt;a href=&quot;/search?t=ios&quot;&gt;#ios&lt;/a&gt; &lt;a href=&quot;/search?t=android&quot;&gt;#android&lt;/a&gt; &lt;a href=&quot;/search?t=php&quot;&gt;#php&lt;/a&gt;&lt;/h3&gt;
 
-&lt;p&gt;~~Mistaken text.~~&lt;/p&gt;
+&lt;p&gt;Всё что связано с программированием. Нытьё, рецепты, моя борьба с фреймворками и мобильными платформами. Всё тут. Скорее всего это будет самая частая рубрика. Буду стараться писать по любой проблеме.&lt;/p&gt;
 
-&lt;h2 id=&quot;syntax-highlighting&quot;&gt;Syntax highlighting&lt;/h2&gt;
+&lt;h3 id=&quot;librarysearchtlibrary&quot;&gt;&lt;a href=&quot;/search?t=library&quot;&gt;#library&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Библиотека. Книги которые я читал, читаю и буду читать. Ну и отзывы без спойлеров в комплекте. Тут всё просто.&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;php
-&amp;lt;?php
-echo &#39;Hello, World!&#39;;
-&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&quot;offtopsearchtofftop&quot;&gt;&lt;a href=&quot;/search?t=offtop&quot;&gt;#offtop&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Тег на всякий случай.&lt;/p&gt;
 
-&lt;h2 id=&quot;tables&quot;&gt;Tables&lt;/h2&gt;
+&lt;p&gt;До скорой встречи, не болейте!&lt;/p&gt;
 
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;First Header&lt;/th&gt;
-      &lt;th&gt;Second Header&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Content Cell&lt;/td&gt;
-      &lt;td&gt;Content Cell&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Content Cell&lt;/td&gt;
-      &lt;td&gt;Content Cell&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
+&lt;p&gt;&lt;img src=&quot;http://demiart.ru/forum/index.php?act=module&amp;amp;module=gallery&amp;amp;cmd=viewimage&amp;amp;img=64281&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-&lt;h2 id=&quot;emoji&quot;&gt;Emoji&lt;/h2&gt;
+&lt;p&gt;Фото взяты с форума &lt;a href=&quot;http://demiart.ru/forum/&quot;&gt;Demiart&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;You can use GitHub flavored emoji &lt;img class=&quot;emoji&quot; title=&quot;:+1:&quot; alt=&quot;:+1:&quot; src=&quot;https://assets.github.com/images/icons/emoji/unicode/1f44d.png&quot; height=&quot;20&quot; width=&quot;20&quot; align=&quot;absmiddle&quot; /&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;&lt;br /&gt;
-It’s not a very good idea to use emoji before &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;!--more--&amp;gt;&lt;/code&gt; because jekyll can’t render emoji in the excerpted content.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&quot;see-also&quot;&gt;See also&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://daringfireball.net/projects/markdown/syntax&quot;&gt;Markdown&lt;/a&gt;&lt;/p&gt;
 </description>
-        <pubDate>Thu, 01 Jan 2015 00:00:00 +0800</pubDate>
+        <pubDate>Fri, 22 Jan 2016 00:45:20 +0800</pubDate>
       </item>
     
   </channel>

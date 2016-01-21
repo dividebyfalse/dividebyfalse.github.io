@@ -1,11 +1,12 @@
 ---
 layout: page
-title: About
+title: Обомнешка
 permalink: /about/
 order: 1
 share: false
 ---
 
-[QckTheme](https://github.com/qckanemoto/jekyll-qck-theme) is a free and open-source theme for [Jekyll](http://jekyllrb.com/), licensed under the MIT License.
+Привет, это блог ноющего программиста построенный на [Jekyll](http://jekyllrb.com/) с использованием темы [QckTheme](https://github.com/qckanemoto/jekyll-qck-theme).
+Это пока всё, что я хочу тебе рассказать о себе.
 
-Enjoy! :smiley:
+Добро пожаловать! :smiley:

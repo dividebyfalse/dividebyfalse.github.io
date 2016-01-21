@@ -1,9 +1,0 @@
----
-layout: post
-title: "Hello everyone!"
-date: "2016-01-21 22:18:16 +0800"
-tags: emacs music jekyll golang library prog play! scala java ios android guitar
-eye_catch: http://demiart.ru/forum/index.php?act=module&module=gallery&cmd=viewimage&img=64379
----
-##Всем привет!
-Я наконец-то сделал это! Завёл собственный бложик, который могу вести прямо в **[#emacs]({{ site.baseurl }}/search?t=emacs)** без привязки к какому-либо сервису с тяжкой возможностью кастомизации. Да ещё без капельки серверного кода. Как я это сделал? Есть такая замечательная штука как **[#jekyll]({{ site.baseurl }}/search?t=jekyll)** про него есть замечательная статья на **[Хабре](http://habrahabr.ru/post/207650/)**. Вкратце - генератор **СТАТИЧЕСКИХ** сайтов. Свой твиттер сделать на нем конечно вряд ли получится, но блог - без проблем (jekyll и позиционируется как генератор блогов). Итак, первым же постом хочу сразу же определить все 
