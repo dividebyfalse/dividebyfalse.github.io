@@ -1,0 +1,7 @@
+---
+layout: post
+title: "Emacs, часть 1"
+date: "2016-06-26 17:57:11 +0800"
+tags: 
+---
+
