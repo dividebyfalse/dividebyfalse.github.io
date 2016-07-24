@@ -2,7 +2,7 @@
 layout: post
 title: "Hello everyone!"
 date: "2016-01-22 00:45:20 +0800"
-tags: emacs music jekyll golang library prog java ios android guitar clojure offtop php python
+tags: emacs music jekyll golang library prog java ios android guitar clojure offtop php python swift
 eye_catch: http://demiart.ru/forum/index.php?act=module&module=gallery&cmd=viewimage&img=64379
 ---
 ## Всем привет!
@@ -26,7 +26,7 @@ eye_catch: http://demiart.ru/forum/index.php?act=module&module=gallery&cmd=viewi
 ### [#jekyll]({{ site.baseurl }}/search?t=jekyll)
 Рассказы о технической стороне блога. Что и как работает, что и как поменялось или поменяется. В планах полностью переписать текущий шаблон и добавить возможность отслеживать читаемые книги.
 
-###  [#prog]({{ site.baseurl }}/search?t=prog) [#golang]({{ site.baseurl }}/search?t=golang) [#java]({{ site.baseurl }}/search?t=java) [#ios]({{ site.baseurl }}/search?t=ios) [#android]({{ site.baseurl }}/search?t=android) [#php]({{ site.baseurl }}/search?t=php) [#clojure]({{ site.baseurl }}/search?t=clojure) [#python]({{ site.baseurl }}/search?t=python)
+###  [#prog]({{ site.baseurl }}/search?t=prog) [#golang]({{ site.baseurl }}/search?t=golang) [#java]({{ site.baseurl }}/search?t=java) [#ios]({{ site.baseurl }}/search?t=ios) [#android]({{ site.baseurl }}/search?t=android) [#php]({{ site.baseurl }}/search?t=php) [#clojure]({{ site.baseurl }}/search?t=clojure) [#python]({{ site.baseurl }}/search?t=python) [#swift]({{ site.baseurl }}/search?t=swift)
 
 Всё что связано с программированием. Нытьё, рецепты, моя борьба с фреймворками и мобильными платформами. Всё тут. Скорее всего это будет самая частая рубрика. Буду стараться писать по любой проблеме.
 

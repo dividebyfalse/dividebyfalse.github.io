@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+
+    
+
+
+
+
+    
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Лайкни бывшую(ого) в инстаграм. Часть 1 | Блог ноющего программиста</title>
+
+    <meta name="description" content="Attention В iOS 10 будет обновленный механизм уведомлений, поэтому данный цикл постов потерял актуальность во время написания. Так что отложу до выхода iOS 1...">
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="http://divideby.ml/2016/07/24/exalarm/">
+    <link rel="alternate" type="application/atom+xml" title="Блог ноющего программиста" href="/feed.xml" />
+
+    
+
+    <meta property="og:title" content="Лайкни бывшую(ого) в инстаграм. Часть 1 | Блог ноющего программиста" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="http://qckanemoto.github.io/jekyll-qck-theme/assets/img/ogp.png" />
+    <meta property="og:url" content="http://divideby.ml/2016/07/24/exalarm/" />
+    <meta property="og:site_name" content="Блог ноющего программиста" />
+    <meta property="fb:admins" content="" />
+    <meta property="fb:app_id" content="" />
+    <meta property="og:description" content="Attention В iOS 10 будет обновленный механизм уведомлений, поэтому данный цикл постов потерял актуальность во время написания. Так что отложу до выхода iOS 1..." />
+
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,700italic,400italic" rel="stylesheet">
+    
+    <link href="/assets/css/tooltip.css" rel="stylesheet">
+    <link href="/assets/css/style.css" rel="stylesheet">
+</head>
+<body>
+
+<header class="site-header">
+    <div class="inner clearfix">
+        
+        <a href="/">
+            <img class="avatar" src="/assets/img/Pikachu.png" alt=""/>
+        </a>
+        
+        <h1 class="clearfix">
+            <a class="title " href="/">Блог ноющего программиста</a>
+            <p class="description">Обо всём и сразу.</p>
+        </h1>
+    </div>
+</header>
+
+<div class="site-container">
+    <div class="site-content">
+        <div class="article-wrapper">
+    <article>
+        
+
+<header>
+    <div class="panel">
+        <h1>
+            
+            Лайкни бывшую(ого) в инстаграм. Часть 1
+            
+        </h1>
+
+        <ul class="tags">
+            
+            
+            <li><i class="fa fa-tags"></i></li>
+            
+            
+            <li>
+                <a class="tag" href="/search/?t=ios">#ios</a>
+            </li>
+            
+            <li>
+                <a class="tag" href="/search/?t=swift">#swift</a>
+            </li>
+            
+            <li>
+                <a class="tag" href="/search/?t=draft">#draft</a>
+            </li>
+            
+        </ul>
+
+        <div class="clearfix">
+            <ul class="meta">
+                
+                <li>
+                    <i class="fa fa-calendar"></i>
+                    2016-07-24
+                </li>
+                
+
+                
+            </ul>
+        </div>
+    </div>
+
+    
+    <div style="margin-top: 1em;">
+        
+
+
+
+
+<div class="clearfix">
+    <div style="float: right !important;">
+        
+        <div style="margin-right: 5px !important; float: left !important;">
+            <a href="https://twitter.com/share" class="twitter-share-button"{count} data-url="http://divideby.ml/2016/07/24/exalarm/" data-text="Лайкни бывшую(ого) в инстаграм. Часть 1 | Блог ноющего программиста">Tweet</a>
+            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+    </div>
+    
+
+    
+</header>
+
+        <section class="post-content">
+            <p><img src="/images/exAlarm/Chapter01/0.jpg" alt="start" /></p>
+
+<p><strong>Attention</strong> В iOS 10 будет обновленный механизм уведомлений, поэтому данный цикл постов потерял актуальность во время написания. Так что отложу до выхода iOS 10. А пока можете поглядеть, как это могло бы быть на  iOS 9.3. Кстати вводится новый тег <strong><a href="/search?t=draft">#draft</a></strong>. Обозначает посты, которые недописаны, и не имеют мотивов быть дописаными, но выложить хочется. Именно поэтому данный пост часто скатывается к набору картинок и кода. Потому что подробно объяснять нет смысла, так как многое изменится. Орфография, пунктуция и прочее сохранены с момента получения информации об iOS 10. Добавлены лишь небольшие комментарии. Так что возможно много ошибок и мусора в тексте.</p>
+
+<p>И ещё. Для тех, кто хоть чуточку шарит, достаточно будт глянуть код (которого вот прям совсем чуть-чуть) и не читать многобукв.</p>
+
+<h3 id="section">Вступление</h3>
+
+<p>После нескольких безуспешных попыток <strong>быстро</strong> подружиться с iOS + Objective-C, было решено не насиловать этот труп. Временем я своим дорожу и потому жалею, что не понял этого ранее. Ну и как догадались читатели “в теме”, я принялся изучать iOS + Swift.
+<!--more--></p>
+
+<p>Никогда не знаешь, где можешь подхватить идею приложения для тренировки. В этот раз помог твиттер. Буду делать будильник, который ставит лайк бывшей в инстаграмм, при нажатии на кнопку “Отложить на 5 минут”. Помимо этой простой киллерфичи есть идея добавить и другие методы борьбы с “сонями”. Например снимать по 10 рублей за каждое “откладывание на 5 минут” хе-хе. Пока не знаю на сколько это реализуемо (через внутренние покупки/подписку или через платные смс) <img class="emoji" title=":smiley:" alt=":smiley:" src="https://assets.github.com/images/icons/emoji/unicode/1f603.png" height="20" width="20" align="absmiddle" /> Идей на самом деле много, но о них потом.</p>
+
+<p>Всё что описывается ниже написано в <strong>XCode 7.3.1</strong> и протестировано на эмуляторе с <strong>iOS 9.3</strong>. В самом первом посте я говорил, что буду всё очень подробно описывать. С тех пор планы не изменились. Это первая часть из…нескольких. Посмотрим как пойдёт.</p>
+
+<h3 id="section-1">Постановка задачи</h3>
+<ul>
+  <li>Разработать <strong>будильник</strong> который ставит лайк бывшей девушке либо бывшему парню в инстаграм при клике на кнопку “Отложить на 5 минут”.</li>
+  <li>Выложить всё это дело в AppStore. Потому что мне не на ком пробовать :)0)</li>
+</ul>
+
+<p>Для такого простого приложения здесь достаточно мелких задач, которые задействуют много сторон разработки приложений. Тут и хранение данных, и работа с внешним API, и механизм нотификаций iOS (уведомления, которые всех уже достали), ну и конечно же основы работы с контроллерами, вьюшками и обработчиками событий. В общем, если вы совсем ноль, то надеюсь данный цикл статей поможет вам немножк втянуться в iOS разработку. Желательно конечно иметь опыт хоть какого-нибудь программирования. Но я буду стараться писать ОЧЕНЬ подробно, надеюсь что не зря (всё-таки зря <img class="emoji" title=":sob:" alt=":sob:" src="https://assets.github.com/images/icons/emoji/unicode/1f62d.png" height="20" width="20" align="absmiddle" />).</p>
+
+<p>В данном посте будет рассмотрено устройство наипростейшего будильника, который только и может, что ставить напоминалку со звуком на определённое время.</p>
+
+<h3 id="section-2">Шаг 0. В добрый путь.</h3>
+<p>Счастливый ли вы обладатель устройства с Mac OS, или красноглазый пользователь Hackintosh - неважно. Дуй ставить <strong>последний</strong> XCode. Как же я быстро перешёл на ты однако.</p>
+
+<p>Что? Тебе <strong>лень</strong> обновляться? Ну тогда пиздуй отсюда. Я сказал последний! Ты ещё не работаешь в старой и большой компании, чтобы пользоваться древними инструментами только потому, что нужно поддерживать старые продукты.</p>
+
+<p>Последний XCode и тот, что указан в этом посте <strong>различаются</strong>? Ну чтож, добро пожаловать в жестокий мир программистов. Велика вероятность того, что код, приведенный в данном посте не будет работать (как в воду глядел бля). Что делать в таком случае? <strike>Уткнуться в подушку и плакать</strike>. Гуглить и СПРАШИВАТЬ у других людей. Если не гуглится, то по-хорошему лучше задать вопрос на <strong><a href="http://stackoverflow.com">stackoverflow</a></strong>, чтобы другим было проще. Но бывает, что нет времени ждать ответа там, и на помощь приходят мессенджеры и тематические чатики. Но помни, что канал об аниме уже не патчит. Полно живых тематических каналов в том же Telegram, ну или если хочешь почуствовать себя кулцхакером и знаешь английский, то заходи в <strong>IRC</strong>. Ньюфаги плюются, старпёры текут. IRC живее всех живых ещё. Да и взрослее/мудрее к тому же. Что-то я отвлёкся малёх. У нас впереди много работы.</p>
+
+<h3 id="section-3">Шаг 1. Создаём проект.</h3>
+
+<p>XCode поставили/обновили. Запускаем, и видим следующее окошко.</p>
+
+<p><img alt="" src="/images/exAlarm/Chapter01/1.png" usemap="#genlinks0" />
+Рис. 1</p>
+
+<p>Погнали по порядку.</p>
+
+<ol>
+  <li><strong><a class="rctlink0" href="">Песочница.</a></strong> Позволяет быстро попробовать написать что-то на Swift. Для шарящих - это типо <span class="tooltip">REPL <span>Read-eval-print loop — простая интерактивная среда программирования.<br /><strong><a href="https://ru.wikipedia.org/wiki/REPL">Подробнее…</a></strong></span></span> с гуем. Для не шарящих - попробуйте и сразу поймёте.</li>
+  <li><strong><a class="rctlink1" href="">Создать проект XCode.</a></strong></li>
+  <li><strong><a class="rctlink2" href="">Открыть проект из</a></strong> <span class="tooltip"> <strong>репозитория</strong> <span><strong>Репозиторий, хранилище</strong> - место, где хранятся и поддерживаются какие-либо данные. Чаще всего данные в репозитории хранятся в виде файлов, доступных для дальнейшего распространения по сети.<br /><strong><a href="https://ru.wikipedia.org/wiki/Репозиторий">Подробнее…</a></strong></span></span>.</li>
+</ol>
+
+<p>Жмем <strong><a class="rctlink1" href="">“Create a new XCode project”</a></strong> и видим окно выбора типа приложения, которое мы будем создавать. Тут на самом деле представлены шаблоны, с помощью которых можно быстро накидать разные типы приложений. По названиям и картинкам легко догадаться, какие приложения создают эти шаблоны.  Мы же не выебываемся и идем с нуля, поэтому жмакаем на <strong>“Single View Application”</strong>.</p>
+
+<p><img src="/images/exAlarm/Chapter01/2.png" alt="2" /></p>
+
+<p>Дальше заполняем инфу о приложении и ставим галочку Use Core Data. Понадобится в дальнейшем, а пока забей.</p>
+
+<p><img src="/images/exAlarm/Chapter01/3.png" alt="3" /></p>
+
+<p>И вуаля! У нас есть приложуха, которая ничего не умеет. Чтобы запустить её, нужно кликнуть по <strong><a class="rctlink3" href="#">кнопке</a></strong>.</p>
+
+<p><img alt="" src="/images/exAlarm/Chapter01/4.png" usemap="#genlinks1" /></p>
+
+<h3 id="section-4">Шаг 2. Разрешаем уведомлять.</h3>
+
+<p>Дальше нам нужно разрешить приложению использовать уведомления. Для этого обратимся к методу <code class="highlighter-rouge">registerUserNotificationSettings</code> класса <code class="highlighter-rouge">UIApplication</code>. В файле <code class="highlighter-rouge">AppDelegate.swift</code> есть функция <code class="highlighter-rouge">application</code> которая выполняется как раз после запуска нашего приложения. Важный момент. Здесь идет только запуск приложения, не факт, что оно полностью запустится до того момента как функция начнет выполнятся. Это то самое место, где мы можем задать настройки приложения и сказать ему, что оно будет отсылать уведомления. Метод <code class="highlighter-rouge">registerUserNotificationSettings</code> на вход принимает объект <code class="highlighter-rouge">UIUserNotificationSettings</code> (будет репрессирован в iOS 10 <img class="emoji" title=":sob:" alt=":sob:" src="https://assets.github.com/images/icons/emoji/unicode/1f62d.png" height="20" width="20" align="absmiddle" /> ) . У этого объекта два поля: <code class="highlighter-rouge">types</code> и <code class="highlighter-rouge">categories</code>.</p>
+
+<p>В <code class="highlighter-rouge">types</code> указывается типы уведомлений, которые разрешается использовать. В нашем случае <code class="highlighter-rouge">Sound</code> и всплывающее окошко <code class="highlighter-rouge">Alert</code>. Есть ещё <code class="highlighter-rouge">Badges</code>. Это такие красные кружочки с циферками над иконкой приложения.</p>
+
+<p>В <code class="highlighter-rouge">categories</code> указываются категории с <code class="highlighter-rouge">Actions</code>. Действиями, которые можно выполнить при просмотре уведомления. Ну типо там “Открыть приложение”, “Отложить будильник на 5 минут” и т.д. А так как действия могут быть разными в зависимости от ситуации, то для этого и нужны категории. Здесь пока ничего не будем указывать, займемся созданием категорий и самих действий позже.</p>
+
+<p>На основе вышесказанного, неоходимо добавить следующий код в функцию <code class="highlighter-rouge">application</code> в файле <code class="highlighter-rouge">AppDelegate.swift</code>. В метод <code class="highlighter-rouge">registerUserNotificationSettings</code> передаём объект <code class="highlighter-rouge">UIUserNotificationSettings</code> с типами <code class="highlighter-rouge">Sound</code> и <code class="highlighter-rouge">Alert</code>. В категории передаём <code class="highlighter-rouge">nil</code></p>
+
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="kd">func</span> <span class="nf">application</span><span class="p">(</span><span class="nv">application</span><span class="p">:</span> <span class="kt">UIApplication</span><span class="p">,</span> <span class="n">didFinishLaunchingWithOptions</span> <span class="nv">launchOptions</span><span class="p">:</span> 
+    <span class="p">[</span><span class="kt">NSObject</span><span class="p">:</span> <span class="kt">AnyObject</span><span class="p">]?)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="p">{</span>
+    
+    <span class="n">application</span><span class="o">.</span><span class="nf">registerUserNotificationSettings</span><span class="p">(</span><span class="kt">UIUserNotificationSettings</span><span class="p">(</span>
+        <span class="nv">forTypes</span><span class="p">:</span> <span class="p">[</span><span class="o">.</span><span class="kt">Sound</span><span class="p">,</span> <span class="o">.</span><span class="kt">Alert</span><span class="p">],</span> <span class="nv">categories</span><span class="p">:</span> <span class="kc">nil</span><span class="p">))</span>
+        
+    <span class="k">return</span> <span class="kc">true</span> 
+<span class="p">}</span></code></pre></figure>
+
+<p>Теперь при запуске увидим запрос на разрешение отсылать уведомления из нашего приложения. Супер.</p>
+
+<h3 id="section-5">Шаг 3. Кодим мышкой раз.</h3>
+
+<p>Теперь идем в файл <code class="highlighter-rouge">Main.storyboard</code>. Тут мы видим внешний вид нашего приложения. Дважды жмем в визуальном редакторе на <code class="highlighter-rouge">View Controller</code>. Перед глазами у вас должно быть что-то типо этого.</p>
+
+<p><img alt="" src="/images/exAlarm/Chapter01/5.png" usemap="#genlinks2" /></p>
+
+<p>Немного разберём интерфейс.</p>
+
+<ul>
+  <li><strong><a class="rctlink4" href="#">Файловый менеджер</a></strong></li>
+  <li><strong><a class="rctlink5" href="#">Окно работы с файлами .storyboard.</a></strong> Кодинг мышкой.</li>
+  <li><strong><a class="rctlink6" href="#">Всевозможные настройки и свойства объектов.</a></strong> Кодинг мышкой. Для дальнейшего удобства перейдите на 4-ую вкладку (как на скриншоте), и выберите Size = iPhone 5.5-inch.</li>
+  <li><strong><a class="rctlink7" href="#">Каталог элементов (View).</a></strong></li>
+</ul>
+
+<p>Листаем наш каталог и мышкой вытаскиваем оттуда два объекта: <code class="highlighter-rouge">Button</code> и <code class="highlighter-rouge">DatePicker</code>. Размещаем как душе угодно в визуальном редакторе. Дальше идём в правый верхний угол и жмём на два кружочка. Появляется текстовый редактор с открытым файлом <code class="highlighter-rouge">ViewController.swift</code>. Мало места? Побалуйся <strong><a class="rctlink8" href="">здесь.</a></strong></p>
+
+<p><img alt="" src="/images/exAlarm/Chapter01/6.png" usemap="#genlinks3" /></p>
+
+<h3 id="section-6">Шаг 4. Кодим мышкой два.</h3>
+
+<p>Теперь самое интересное. Лично я не люблю IDE, потому что иногда они творят какую-то магию. Как например дальше. Зажмите кнопку Alt и зажмите кнопку мыши на объекте <code class="highlighter-rouge">DatePicker</code>. Перетащите мышку в текстовый редактор. За мышкой должна вести синяя линия. Отпустите мышку перед функцией <code class="highlighter-rouge">viewDidLoad()</code>.</p>
+
+<p>Вылезет следующее окно.</p>
+
+<p><img alt="" src="/images/exAlarm/Chapter01/7.png" /></p>
+
+<p>Заполняем имя и жмем Connect. Дальше туже процедуру повторяем с кнопкой, только в пункте Connection выбираем Action. И вставляем лучше это куда-нибудь в конец. После функции <code class="highlighter-rouge">didReceiveMemoryWarning()</code> например.</p>
+
+<p><img alt="" src="/images/exAlarm/Chapter01/8.png" /></p>
+
+<p>Что же сейчас сделали? Мы связали визуальное представление объектов с кодом приложения. Эта связь описывается в файле <code class="highlighter-rouge">Main.storyboard</code>, который по своей сути является обычным XML файлом. То есть сначала связали <code class="highlighter-rouge">DatePicker</code> с каким-то именем (в моем случае <code class="highlighter-rouge">DataSet</code>) и добавили обработчик (у меня <code class="highlighter-rouge">SetAlarm</code>) на кнопку.</p>
+
+<h3 id="section-7">Шаг 5. Обрабатываем нажатие на кнопку.</h3>
+
+<p>Теперь заполним кодом наш обработчик. Тут на самом деле всё просто. Сначала создаём объект уведомления. Потом задаём ему определенные свойства. Например сообщение, которое выводится в уведомлении (<code class="highlighter-rouge">alertBody</code>), мелодия (<code class="highlighter-rouge">soundName</code>) и наконец дату (<code class="highlighter-rouge">fireDate</code>), когда это уведомление вызвать. <strong><a href="http://onlineclock.net/audio/options/police-car.mp3">Мелодию</a></strong> надо закинуть в проект, простым перетаскиванием из Finder в файловый менеджер XCode. Дату вызова берем из объекта DatePicker (<code class="highlighter-rouge">DataSet.date</code>). После всего добавляем наше уведомление в так называемое “расписание” телефона c помощью <code class="highlighter-rouge">scheduleLocalNotification()</code>. Теперь оно не зависит от работоспособности самого приложения и вызовется по указанной дате. В итоге код обработчика нажатия на кнопку будет следующий:</p>
+
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift">    <span class="kd">@IBAction</span> <span class="kd">func</span> <span class="kt">SetAlarm</span><span class="p">(</span><span class="nv">sender</span><span class="p">:</span> <span class="kt">AnyObject</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">notification</span><span class="p">:</span><span class="kt">UILocalNotification</span> <span class="o">=</span> <span class="kt">UILocalNotification</span><span class="p">()</span>
+        <span class="n">notification</span><span class="o">.</span><span class="n">alertBody</span> <span class="o">=</span> <span class="s">"Hello!"</span>
+        <span class="n">notification</span><span class="o">.</span><span class="n">soundName</span> <span class="o">=</span> <span class="s">"police-car.mp3"</span>
+        <span class="n">notification</span><span class="o">.</span><span class="n">fireDate</span> <span class="o">=</span> <span class="kt">DataSet</span><span class="o">.</span><span class="n">date</span>
+        <span class="kt">UIApplication</span><span class="o">.</span><span class="nf">sharedApplication</span><span class="p">()</span><span class="o">.</span><span class="nf">scheduleLocalNotification</span><span class="p">(</span><span class="n">notification</span><span class="p">)</span>
+    <span class="p">}</span></code></pre></figure>
+
+<h3 id="section-8">Шаг 6. Тестируем.</h3>
+
+<p>А теперь тестируем! Выставляем дату (например на минуту вперёд). Жмем на кнопку. Выходим из приложения (⌘⇧H), ждём, видим и слышим :) Тип уведомления можно изменить в настройках.</p>
+
+<p><img alt="" src="/images/exAlarm/Chapter01/10.png" /></p>
+
+<h3 id="section-9">Итог</h3>
+
+<p>Данный пост станет абсолютно бесполезным через месяц (а я как раз через месяц и хотел закончить цикл постов). Пусть это будет мне уроком. Но я хоть потренировался в написании технотекстов и немножко прокачал блог (всплывающие подсказки и подсвечивание областей картинок). Хотя тут ещё писать и писать, а для полного подробного объяснения ещё очень далеко. Ну да ладно. Спасибо, что читаете. Всего доброго, не болейте <img class="emoji" title=":wink:" alt=":wink:" src="https://assets.github.com/images/icons/emoji/unicode/1f609.png" height="20" width="20" align="absmiddle" />!</p>
+
+<map name="genlinks0">
+    <area id="rct0" href="#" shape="rect" coords="120,300,520,350" alt="Octoface" data-maphilight="{'stroke':false,'fillColor':'ff0000','fillOpacity':0.6}" title="Metadata" />
+    <area id="rct1" href="#" shape="rect" coords="120,350,520,400" alt="Octoface" data-maphilight="{'stroke':false,'fillColor':'ff0000','fillOpacity':0.6}" title="Metadata" />
+    <area id="rct2" href="#" shape="rect" coords="120,400,520,450" alt="Octoface" data-maphilight="{'stroke':false,'fillColor':'ff0000','fillOpacity':0.6}" title="Metadata" />
+</map>
+
+<map name="genlinks1">
+    <area id="rct3" href="#" shape="rect" coords="50,20,110,35" alt="Octoface" data-maphilight="{'stroke':false,'fillColor':'ff0000','fillOpacity':0.6}" title="Metadata" />
+</map>
+
+<map name="genlinks2">
+    <area id="rct4" href="#" shape="rect" coords="0,40,170,600" alt="Octoface" data-maphilight="{'stroke':false,'fillColor':'ff0000','fillOpacity':0.6}" title="Metadata" />
+    <area id="rct5" href="#" shape="rect" coords="170,40,670,600" alt="Octoface" data-maphilight="{'stroke':false,'fillColor':'ff0000','fillOpacity':0.6}" title="Metadata" />
+    <area id="rct6" href="#" shape="rect" coords="670,40,840,360" alt="Octoface" data-maphilight="{'stroke':false,'fillColor':'ff0000','fillOpacity':0.6}" title="Metadata" />
+    <area id="rct7" href="#" shape="rect" coords="670,360,840,600" alt="Octoface" data-maphilight="{'stroke':false,'fillColor':'ff0000','fillOpacity':0.6}" title="Metadata" />
+</map>
+
+<map name="genlinks3">
+    <area id="rct8" href="#" shape="rect" coords="630,20,820,65" alt="Octoface" data-maphilight="{'stroke':false,'fillColor':'ff0000','fillOpacity':0.6}" title="Metadata" />
+</map>
+
+        </section>
+        <footer>
+    
+    
+
+
+
+
+<div class="clearfix">
+    <div style="float: right !important;">
+        
+        <div style="margin-right: 5px !important; float: left !important;">
+            <a href="https://twitter.com/share" class="twitter-share-button"{count} data-url="http://divideby.ml/2016/07/24/exalarm/" data-text="Лайкни бывшую(ого) в инстаграм. Часть 1 | Блог ноющего программиста">Tweet</a>
+            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+    
+</footer>
+
+    </article>
+</div>
+
+
+<section class="comments">
+    <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'dividebyfalse';
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+</section>
+
+
+    </div>
+
+    <aside class="site-aside">
+        <div class="inner">
+            <div class="block">
+                <form action="/search">
+                    <input type="search" id="search" name="q" placeholder="Поиск" />
+                </form>
+            </div>
+            <ul>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                <li><a class="page-link" href="/about/">Обомнешка</a></li>
+                
+                
+                
+                <li><a class="page-link" href="/tags/">Теги</a></li>
+                
+                
+                
+                <li><a class="page-link" href="/archives/">Архив</a></li>
+                
+                
+            </ul>
+            <ul class="icons">
+                
+
+
+<li>
+    <a href="/feed.xml">
+        <i class="fa fa-fw fa-rss"></i>
+    </a>
+</li>
+
+
+
+
+
+<li>
+    <a href="https://github.com/Evmap">
+        <i class="fa fa-fw fa-github"></i>
+    </a>
+</li>
+
+
+
+
+
+<li>
+    <a href="https://twitter.com/divide_by_false">
+        <i class="fa fa-fw fa-twitter"></i>
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </ul>
+            <hr class="with-no-margin margin-bottom"/>
+
+            <div class="block sticky">
+                <h1>Недавние посты</h1>
+                <ul>
+                    
+                    
+                    <li><a href="/2016/07/24/exalarm/">Лайкни бывшую(ого) в инстаграм. Часть 1</a></li>
+                    
+                    <li><a href="/2016/07/11/toyota/">Тойота-Маша-Недоверяша</a></li>
+                    
+                    <li><a href="/2016/07/11/slaves/">Quot servi tot hostes</a></li>
+                    
+                    <li><a href="/2016/01/22/hello_everyone/">Hello everyone!</a></li>
+                    
+                </ul>
+            </div>
+        </div>
+    </aside>
+</div>
+
+<footer class="site-footer">
+    <div class="inner">
+        <span>Powered by <a href="http://jekyllrb.com">Jekyll</a> with <a href="https://github.com/qckanemoto/jekyll-qck-theme">QckTheme</a></span>
+    </div>
+</footer>
+
+
+<script src="/assets/lib/jquery.min.js"></script> 
+<script src="/assets/lib/maphilight.js"></script>
+<script src="/assets/lib/garand-sticky/jquery.sticky.js"></script>
+<script src="/assets/js/script.js"></script>
+<script src="/assets/js/tooltip.js"></script>
+
+<script src="/assets/js/header-link.js"></script>
+
+
+
+
+<!-- Init Facebook SDK -->
+
+
+<!-- Google Analytics -->
+
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-72712048-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+
+
+</body>
+</html>

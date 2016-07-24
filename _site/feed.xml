@@ -5,7 +5,175 @@
     <atom:link href="http://divideby.ml/feed.xml" rel="self" type="application/rss+xml"/>
     <link>http://divideby.ml/</link>
     <description>Обо всём и сразу.</description>
-    <pubDate>Wed, 13 Jul 2016 22:54:09 +0800</pubDate>
+    <pubDate>Sun, 24 Jul 2016 19:43:14 +0800</pubDate>
+    
+      
+
+
+
+      <item>
+        <title>Лайкни бывшую(ого) в инстаграм. Часть 1 | Блог ноющего программиста</title>
+        
+        <link>http://divideby.ml/2016/07/24/exalarm/</link>
+        <guid isPermaLink="true">http://divideby.ml/2016/07/24/exalarm/</guid>
+        <description>&lt;p&gt;&lt;img src=&quot;/images/exAlarm/Chapter01/0.jpg&quot; alt=&quot;start&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Attention&lt;/strong&gt; В iOS 10 будет обновленный механизм уведомлений, поэтому данный цикл постов потерял актуальность во время написания. Так что отложу до выхода iOS 10. А пока можете поглядеть, как это могло бы быть на  iOS 9.3. Кстати вводится новый тег &lt;strong&gt;&lt;a href=&quot;/search?t=draft&quot;&gt;#draft&lt;/a&gt;&lt;/strong&gt;. Обозначает посты, которые недописаны, и не имеют мотивов быть дописаными, но выложить хочется. Именно поэтому данный пост часто скатывается к набору картинок и кода. Потому что подробно объяснять нет смысла, так как многое изменится. Орфография, пунктуция и прочее сохранены с момента получения информации об iOS 10. Добавлены лишь небольшие комментарии. Так что возможно много ошибок и мусора в тексте.&lt;/p&gt;
+
+&lt;p&gt;И ещё. Для тех, кто хоть чуточку шарит, достаточно будт глянуть код (которого вот прям совсем чуть-чуть) и не читать многобукв.&lt;/p&gt;
+
+&lt;h3 id=&quot;section&quot;&gt;Вступление&lt;/h3&gt;
+
+&lt;p&gt;После нескольких безуспешных попыток &lt;strong&gt;быстро&lt;/strong&gt; подружиться с iOS + Objective-C, было решено не насиловать этот труп. Временем я своим дорожу и потому жалею, что не понял этого ранее. Ну и как догадались читатели “в теме”, я принялся изучать iOS + Swift.
+&lt;!--more--&gt;&lt;/p&gt;
+
+&lt;p&gt;Никогда не знаешь, где можешь подхватить идею приложения для тренировки. В этот раз помог твиттер. Буду делать будильник, который ставит лайк бывшей в инстаграмм, при нажатии на кнопку “Отложить на 5 минут”. Помимо этой простой киллерфичи есть идея добавить и другие методы борьбы с “сонями”. Например снимать по 10 рублей за каждое “откладывание на 5 минут” хе-хе. Пока не знаю на сколько это реализуемо (через внутренние покупки/подписку или через платные смс) &lt;img class=&quot;emoji&quot; title=&quot;:smiley:&quot; alt=&quot;:smiley:&quot; src=&quot;https://assets.github.com/images/icons/emoji/unicode/1f603.png&quot; height=&quot;20&quot; width=&quot;20&quot; align=&quot;absmiddle&quot; /&gt; Идей на самом деле много, но о них потом.&lt;/p&gt;
+
+&lt;p&gt;Всё что описывается ниже написано в &lt;strong&gt;XCode 7.3.1&lt;/strong&gt; и протестировано на эмуляторе с &lt;strong&gt;iOS 9.3&lt;/strong&gt;. В самом первом посте я говорил, что буду всё очень подробно описывать. С тех пор планы не изменились. Это первая часть из…нескольких. Посмотрим как пойдёт.&lt;/p&gt;
+
+&lt;h3 id=&quot;section-1&quot;&gt;Постановка задачи&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Разработать &lt;strong&gt;будильник&lt;/strong&gt; который ставит лайк бывшей девушке либо бывшему парню в инстаграм при клике на кнопку “Отложить на 5 минут”.&lt;/li&gt;
+  &lt;li&gt;Выложить всё это дело в AppStore. Потому что мне не на ком пробовать :)0)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Для такого простого приложения здесь достаточно мелких задач, которые задействуют много сторон разработки приложений. Тут и хранение данных, и работа с внешним API, и механизм нотификаций iOS (уведомления, которые всех уже достали), ну и конечно же основы работы с контроллерами, вьюшками и обработчиками событий. В общем, если вы совсем ноль, то надеюсь данный цикл статей поможет вам немножк втянуться в iOS разработку. Желательно конечно иметь опыт хоть какого-нибудь программирования. Но я буду стараться писать ОЧЕНЬ подробно, надеюсь что не зря (всё-таки зря &lt;img class=&quot;emoji&quot; title=&quot;:sob:&quot; alt=&quot;:sob:&quot; src=&quot;https://assets.github.com/images/icons/emoji/unicode/1f62d.png&quot; height=&quot;20&quot; width=&quot;20&quot; align=&quot;absmiddle&quot; /&gt;).&lt;/p&gt;
+
+&lt;p&gt;В данном посте будет рассмотрено устройство наипростейшего будильника, который только и может, что ставить напоминалку со звуком на определённое время.&lt;/p&gt;
+
+&lt;h3 id=&quot;section-2&quot;&gt;Шаг 0. В добрый путь.&lt;/h3&gt;
+&lt;p&gt;Счастливый ли вы обладатель устройства с Mac OS, или красноглазый пользователь Hackintosh - неважно. Дуй ставить &lt;strong&gt;последний&lt;/strong&gt; XCode. Как же я быстро перешёл на ты однако.&lt;/p&gt;
+
+&lt;p&gt;Что? Тебе &lt;strong&gt;лень&lt;/strong&gt; обновляться? Ну тогда пиздуй отсюда. Я сказал последний! Ты ещё не работаешь в старой и большой компании, чтобы пользоваться древними инструментами только потому, что нужно поддерживать старые продукты.&lt;/p&gt;
+
+&lt;p&gt;Последний XCode и тот, что указан в этом посте &lt;strong&gt;различаются&lt;/strong&gt;? Ну чтож, добро пожаловать в жестокий мир программистов. Велика вероятность того, что код, приведенный в данном посте не будет работать (как в воду глядел бля). Что делать в таком случае? &lt;strike&gt;Уткнуться в подушку и плакать&lt;/strike&gt;. Гуглить и СПРАШИВАТЬ у других людей. Если не гуглится, то по-хорошему лучше задать вопрос на &lt;strong&gt;&lt;a href=&quot;http://stackoverflow.com&quot;&gt;stackoverflow&lt;/a&gt;&lt;/strong&gt;, чтобы другим было проще. Но бывает, что нет времени ждать ответа там, и на помощь приходят мессенджеры и тематические чатики. Но помни, что канал об аниме уже не патчит. Полно живых тематических каналов в том же Telegram, ну или если хочешь почуствовать себя кулцхакером и знаешь английский, то заходи в &lt;strong&gt;IRC&lt;/strong&gt;. Ньюфаги плюются, старпёры текут. IRC живее всех живых ещё. Да и взрослее/мудрее к тому же. Что-то я отвлёкся малёх. У нас впереди много работы.&lt;/p&gt;
+
+&lt;h3 id=&quot;section-3&quot;&gt;Шаг 1. Создаём проект.&lt;/h3&gt;
+
+&lt;p&gt;XCode поставили/обновили. Запускаем, и видим следующее окошко.&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt=&quot;&quot; src=&quot;/images/exAlarm/Chapter01/1.png&quot; usemap=&quot;#genlinks0&quot; /&gt;
+Рис. 1&lt;/p&gt;
+
+&lt;p&gt;Погнали по порядку.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;a class=&quot;rctlink0&quot; href=&quot;&quot;&gt;Песочница.&lt;/a&gt;&lt;/strong&gt; Позволяет быстро попробовать написать что-то на Swift. Для шарящих - это типо &lt;span class=&quot;tooltip&quot;&gt;REPL &lt;span&gt;Read-eval-print loop — простая интерактивная среда программирования.&lt;br /&gt;&lt;strong&gt;&lt;a href=&quot;https://ru.wikipedia.org/wiki/REPL&quot;&gt;Подробнее…&lt;/a&gt;&lt;/strong&gt;&lt;/span&gt;&lt;/span&gt; с гуем. Для не шарящих - попробуйте и сразу поймёте.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;a class=&quot;rctlink1&quot; href=&quot;&quot;&gt;Создать проект XCode.&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;a class=&quot;rctlink2&quot; href=&quot;&quot;&gt;Открыть проект из&lt;/a&gt;&lt;/strong&gt; &lt;span class=&quot;tooltip&quot;&gt; &lt;strong&gt;репозитория&lt;/strong&gt; &lt;span&gt;&lt;strong&gt;Репозиторий, хранилище&lt;/strong&gt; - место, где хранятся и поддерживаются какие-либо данные. Чаще всего данные в репозитории хранятся в виде файлов, доступных для дальнейшего распространения по сети.&lt;br /&gt;&lt;strong&gt;&lt;a href=&quot;https://ru.wikipedia.org/wiki/Репозиторий&quot;&gt;Подробнее…&lt;/a&gt;&lt;/strong&gt;&lt;/span&gt;&lt;/span&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Жмем &lt;strong&gt;&lt;a class=&quot;rctlink1&quot; href=&quot;&quot;&gt;“Create a new XCode project”&lt;/a&gt;&lt;/strong&gt; и видим окно выбора типа приложения, которое мы будем создавать. Тут на самом деле представлены шаблоны, с помощью которых можно быстро накидать разные типы приложений. По названиям и картинкам легко догадаться, какие приложения создают эти шаблоны.  Мы же не выебываемся и идем с нуля, поэтому жмакаем на &lt;strong&gt;“Single View Application”&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/exAlarm/Chapter01/2.png&quot; alt=&quot;2&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Дальше заполняем инфу о приложении и ставим галочку Use Core Data. Понадобится в дальнейшем, а пока забей.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/exAlarm/Chapter01/3.png&quot; alt=&quot;3&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;И вуаля! У нас есть приложуха, которая ничего не умеет. Чтобы запустить её, нужно кликнуть по &lt;strong&gt;&lt;a class=&quot;rctlink3&quot; href=&quot;#&quot;&gt;кнопке&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt=&quot;&quot; src=&quot;/images/exAlarm/Chapter01/4.png&quot; usemap=&quot;#genlinks1&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;section-4&quot;&gt;Шаг 2. Разрешаем уведомлять.&lt;/h3&gt;
+
+&lt;p&gt;Дальше нам нужно разрешить приложению использовать уведомления. Для этого обратимся к методу &lt;code class=&quot;highlighter-rouge&quot;&gt;registerUserNotificationSettings&lt;/code&gt; класса &lt;code class=&quot;highlighter-rouge&quot;&gt;UIApplication&lt;/code&gt;. В файле &lt;code class=&quot;highlighter-rouge&quot;&gt;AppDelegate.swift&lt;/code&gt; есть функция &lt;code class=&quot;highlighter-rouge&quot;&gt;application&lt;/code&gt; которая выполняется как раз после запуска нашего приложения. Важный момент. Здесь идет только запуск приложения, не факт, что оно полностью запустится до того момента как функция начнет выполнятся. Это то самое место, где мы можем задать настройки приложения и сказать ему, что оно будет отсылать уведомления. Метод &lt;code class=&quot;highlighter-rouge&quot;&gt;registerUserNotificationSettings&lt;/code&gt; на вход принимает объект &lt;code class=&quot;highlighter-rouge&quot;&gt;UIUserNotificationSettings&lt;/code&gt; (будет репрессирован в iOS 10 &lt;img class=&quot;emoji&quot; title=&quot;:sob:&quot; alt=&quot;:sob:&quot; src=&quot;https://assets.github.com/images/icons/emoji/unicode/1f62d.png&quot; height=&quot;20&quot; width=&quot;20&quot; align=&quot;absmiddle&quot; /&gt; ) . У этого объекта два поля: &lt;code class=&quot;highlighter-rouge&quot;&gt;types&lt;/code&gt; и &lt;code class=&quot;highlighter-rouge&quot;&gt;categories&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;В &lt;code class=&quot;highlighter-rouge&quot;&gt;types&lt;/code&gt; указывается типы уведомлений, которые разрешается использовать. В нашем случае &lt;code class=&quot;highlighter-rouge&quot;&gt;Sound&lt;/code&gt; и всплывающее окошко &lt;code class=&quot;highlighter-rouge&quot;&gt;Alert&lt;/code&gt;. Есть ещё &lt;code class=&quot;highlighter-rouge&quot;&gt;Badges&lt;/code&gt;. Это такие красные кружочки с циферками над иконкой приложения.&lt;/p&gt;
+
+&lt;p&gt;В &lt;code class=&quot;highlighter-rouge&quot;&gt;categories&lt;/code&gt; указываются категории с &lt;code class=&quot;highlighter-rouge&quot;&gt;Actions&lt;/code&gt;. Действиями, которые можно выполнить при просмотре уведомления. Ну типо там “Открыть приложение”, “Отложить будильник на 5 минут” и т.д. А так как действия могут быть разными в зависимости от ситуации, то для этого и нужны категории. Здесь пока ничего не будем указывать, займемся созданием категорий и самих действий позже.&lt;/p&gt;
+
+&lt;p&gt;На основе вышесказанного, неоходимо добавить следующий код в функцию &lt;code class=&quot;highlighter-rouge&quot;&gt;application&lt;/code&gt; в файле &lt;code class=&quot;highlighter-rouge&quot;&gt;AppDelegate.swift&lt;/code&gt;. В метод &lt;code class=&quot;highlighter-rouge&quot;&gt;registerUserNotificationSettings&lt;/code&gt; передаём объект &lt;code class=&quot;highlighter-rouge&quot;&gt;UIUserNotificationSettings&lt;/code&gt; с типами &lt;code class=&quot;highlighter-rouge&quot;&gt;Sound&lt;/code&gt; и &lt;code class=&quot;highlighter-rouge&quot;&gt;Alert&lt;/code&gt;. В категории передаём &lt;code class=&quot;highlighter-rouge&quot;&gt;nil&lt;/code&gt;&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;application&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;application&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UIApplication&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;didFinishLaunchingWithOptions&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;launchOptions&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; 
+    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;NSObject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;AnyObject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]?)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Bool&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    
+    &lt;span class=&quot;n&quot;&gt;application&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;registerUserNotificationSettings&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;UIUserNotificationSettings&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+        &lt;span class=&quot;nv&quot;&gt;forTypes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Sound&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Alert&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;categories&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+        
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt; 
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Теперь при запуске увидим запрос на разрешение отсылать уведомления из нашего приложения. Супер.&lt;/p&gt;
+
+&lt;h3 id=&quot;section-5&quot;&gt;Шаг 3. Кодим мышкой раз.&lt;/h3&gt;
+
+&lt;p&gt;Теперь идем в файл &lt;code class=&quot;highlighter-rouge&quot;&gt;Main.storyboard&lt;/code&gt;. Тут мы видим внешний вид нашего приложения. Дважды жмем в визуальном редакторе на &lt;code class=&quot;highlighter-rouge&quot;&gt;View Controller&lt;/code&gt;. Перед глазами у вас должно быть что-то типо этого.&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt=&quot;&quot; src=&quot;/images/exAlarm/Chapter01/5.png&quot; usemap=&quot;#genlinks2&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Немного разберём интерфейс.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;a class=&quot;rctlink4&quot; href=&quot;#&quot;&gt;Файловый менеджер&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;a class=&quot;rctlink5&quot; href=&quot;#&quot;&gt;Окно работы с файлами .storyboard.&lt;/a&gt;&lt;/strong&gt; Кодинг мышкой.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;a class=&quot;rctlink6&quot; href=&quot;#&quot;&gt;Всевозможные настройки и свойства объектов.&lt;/a&gt;&lt;/strong&gt; Кодинг мышкой. Для дальнейшего удобства перейдите на 4-ую вкладку (как на скриншоте), и выберите Size = iPhone 5.5-inch.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;a class=&quot;rctlink7&quot; href=&quot;#&quot;&gt;Каталог элементов (View).&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Листаем наш каталог и мышкой вытаскиваем оттуда два объекта: &lt;code class=&quot;highlighter-rouge&quot;&gt;Button&lt;/code&gt; и &lt;code class=&quot;highlighter-rouge&quot;&gt;DatePicker&lt;/code&gt;. Размещаем как душе угодно в визуальном редакторе. Дальше идём в правый верхний угол и жмём на два кружочка. Появляется текстовый редактор с открытым файлом &lt;code class=&quot;highlighter-rouge&quot;&gt;ViewController.swift&lt;/code&gt;. Мало места? Побалуйся &lt;strong&gt;&lt;a class=&quot;rctlink8&quot; href=&quot;&quot;&gt;здесь.&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt=&quot;&quot; src=&quot;/images/exAlarm/Chapter01/6.png&quot; usemap=&quot;#genlinks3&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;section-6&quot;&gt;Шаг 4. Кодим мышкой два.&lt;/h3&gt;
+
+&lt;p&gt;Теперь самое интересное. Лично я не люблю IDE, потому что иногда они творят какую-то магию. Как например дальше. Зажмите кнопку Alt и зажмите кнопку мыши на объекте &lt;code class=&quot;highlighter-rouge&quot;&gt;DatePicker&lt;/code&gt;. Перетащите мышку в текстовый редактор. За мышкой должна вести синяя линия. Отпустите мышку перед функцией &lt;code class=&quot;highlighter-rouge&quot;&gt;viewDidLoad()&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Вылезет следующее окно.&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt=&quot;&quot; src=&quot;/images/exAlarm/Chapter01/7.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Заполняем имя и жмем Connect. Дальше туже процедуру повторяем с кнопкой, только в пункте Connection выбираем Action. И вставляем лучше это куда-нибудь в конец. После функции &lt;code class=&quot;highlighter-rouge&quot;&gt;didReceiveMemoryWarning()&lt;/code&gt; например.&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt=&quot;&quot; src=&quot;/images/exAlarm/Chapter01/8.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Что же сейчас сделали? Мы связали визуальное представление объектов с кодом приложения. Эта связь описывается в файле &lt;code class=&quot;highlighter-rouge&quot;&gt;Main.storyboard&lt;/code&gt;, который по своей сути является обычным XML файлом. То есть сначала связали &lt;code class=&quot;highlighter-rouge&quot;&gt;DatePicker&lt;/code&gt; с каким-то именем (в моем случае &lt;code class=&quot;highlighter-rouge&quot;&gt;DataSet&lt;/code&gt;) и добавили обработчик (у меня &lt;code class=&quot;highlighter-rouge&quot;&gt;SetAlarm&lt;/code&gt;) на кнопку.&lt;/p&gt;
+
+&lt;h3 id=&quot;section-7&quot;&gt;Шаг 5. Обрабатываем нажатие на кнопку.&lt;/h3&gt;
+
+&lt;p&gt;Теперь заполним кодом наш обработчик. Тут на самом деле всё просто. Сначала создаём объект уведомления. Потом задаём ему определенные свойства. Например сообщение, которое выводится в уведомлении (&lt;code class=&quot;highlighter-rouge&quot;&gt;alertBody&lt;/code&gt;), мелодия (&lt;code class=&quot;highlighter-rouge&quot;&gt;soundName&lt;/code&gt;) и наконец дату (&lt;code class=&quot;highlighter-rouge&quot;&gt;fireDate&lt;/code&gt;), когда это уведомление вызвать. &lt;strong&gt;&lt;a href=&quot;http://onlineclock.net/audio/options/police-car.mp3&quot;&gt;Мелодию&lt;/a&gt;&lt;/strong&gt; надо закинуть в проект, простым перетаскиванием из Finder в файловый менеджер XCode. Дату вызова берем из объекта DatePicker (&lt;code class=&quot;highlighter-rouge&quot;&gt;DataSet.date&lt;/code&gt;). После всего добавляем наше уведомление в так называемое “расписание” телефона c помощью &lt;code class=&quot;highlighter-rouge&quot;&gt;scheduleLocalNotification()&lt;/code&gt;. Теперь оно не зависит от работоспособности самого приложения и вызовется по указанной дате. В итоге код обработчика нажатия на кнопку будет следующий:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;    &lt;span class=&quot;kd&quot;&gt;@IBAction&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;SetAlarm&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;sender&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;AnyObject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;notification&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;UILocalNotification&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UILocalNotification&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;notification&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;alertBody&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Hello!&quot;&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;notification&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;soundName&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;police-car.mp3&quot;&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;notification&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fireDate&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;DataSet&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;date&lt;/span&gt;
+        &lt;span class=&quot;kt&quot;&gt;UIApplication&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;sharedApplication&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;scheduleLocalNotification&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;notification&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h3 id=&quot;section-8&quot;&gt;Шаг 6. Тестируем.&lt;/h3&gt;
+
+&lt;p&gt;А теперь тестируем! Выставляем дату (например на минуту вперёд). Жмем на кнопку. Выходим из приложения (⌘⇧H), ждём, видим и слышим :) Тип уведомления можно изменить в настройках.&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt=&quot;&quot; src=&quot;/images/exAlarm/Chapter01/10.png&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;section-9&quot;&gt;Итог&lt;/h3&gt;
+
+&lt;p&gt;Данный пост станет абсолютно бесполезным через месяц (а я как раз через месяц и хотел закончить цикл постов). Пусть это будет мне уроком. Но я хоть потренировался в написании технотекстов и немножко прокачал блог (всплывающие подсказки и подсвечивание областей картинок). Хотя тут ещё писать и писать, а для полного подробного объяснения ещё очень далеко. Ну да ладно. Спасибо, что читаете. Всего доброго, не болейте &lt;img class=&quot;emoji&quot; title=&quot;:wink:&quot; alt=&quot;:wink:&quot; src=&quot;https://assets.github.com/images/icons/emoji/unicode/1f609.png&quot; height=&quot;20&quot; width=&quot;20&quot; align=&quot;absmiddle&quot; /&gt;!&lt;/p&gt;
+
+&lt;map name=&quot;genlinks0&quot;&gt;
+    &lt;area id=&quot;rct0&quot; href=&quot;#&quot; shape=&quot;rect&quot; coords=&quot;120,300,520,350&quot; alt=&quot;Octoface&quot; data-maphilight=&quot;{&#39;stroke&#39;:false,&#39;fillColor&#39;:&#39;ff0000&#39;,&#39;fillOpacity&#39;:0.6}&quot; title=&quot;Metadata&quot; /&gt;
+    &lt;area id=&quot;rct1&quot; href=&quot;#&quot; shape=&quot;rect&quot; coords=&quot;120,350,520,400&quot; alt=&quot;Octoface&quot; data-maphilight=&quot;{&#39;stroke&#39;:false,&#39;fillColor&#39;:&#39;ff0000&#39;,&#39;fillOpacity&#39;:0.6}&quot; title=&quot;Metadata&quot; /&gt;
+    &lt;area id=&quot;rct2&quot; href=&quot;#&quot; shape=&quot;rect&quot; coords=&quot;120,400,520,450&quot; alt=&quot;Octoface&quot; data-maphilight=&quot;{&#39;stroke&#39;:false,&#39;fillColor&#39;:&#39;ff0000&#39;,&#39;fillOpacity&#39;:0.6}&quot; title=&quot;Metadata&quot; /&gt;
+&lt;/map&gt;
+
+&lt;map name=&quot;genlinks1&quot;&gt;
+    &lt;area id=&quot;rct3&quot; href=&quot;#&quot; shape=&quot;rect&quot; coords=&quot;50,20,110,35&quot; alt=&quot;Octoface&quot; data-maphilight=&quot;{&#39;stroke&#39;:false,&#39;fillColor&#39;:&#39;ff0000&#39;,&#39;fillOpacity&#39;:0.6}&quot; title=&quot;Metadata&quot; /&gt;
+&lt;/map&gt;
+
+&lt;map name=&quot;genlinks2&quot;&gt;
+    &lt;area id=&quot;rct4&quot; href=&quot;#&quot; shape=&quot;rect&quot; coords=&quot;0,40,170,600&quot; alt=&quot;Octoface&quot; data-maphilight=&quot;{&#39;stroke&#39;:false,&#39;fillColor&#39;:&#39;ff0000&#39;,&#39;fillOpacity&#39;:0.6}&quot; title=&quot;Metadata&quot; /&gt;
+    &lt;area id=&quot;rct5&quot; href=&quot;#&quot; shape=&quot;rect&quot; coords=&quot;170,40,670,600&quot; alt=&quot;Octoface&quot; data-maphilight=&quot;{&#39;stroke&#39;:false,&#39;fillColor&#39;:&#39;ff0000&#39;,&#39;fillOpacity&#39;:0.6}&quot; title=&quot;Metadata&quot; /&gt;
+    &lt;area id=&quot;rct6&quot; href=&quot;#&quot; shape=&quot;rect&quot; coords=&quot;670,40,840,360&quot; alt=&quot;Octoface&quot; data-maphilight=&quot;{&#39;stroke&#39;:false,&#39;fillColor&#39;:&#39;ff0000&#39;,&#39;fillOpacity&#39;:0.6}&quot; title=&quot;Metadata&quot; /&gt;
+    &lt;area id=&quot;rct7&quot; href=&quot;#&quot; shape=&quot;rect&quot; coords=&quot;670,360,840,600&quot; alt=&quot;Octoface&quot; data-maphilight=&quot;{&#39;stroke&#39;:false,&#39;fillColor&#39;:&#39;ff0000&#39;,&#39;fillOpacity&#39;:0.6}&quot; title=&quot;Metadata&quot; /&gt;
+&lt;/map&gt;
+
+&lt;map name=&quot;genlinks3&quot;&gt;
+    &lt;area id=&quot;rct8&quot; href=&quot;#&quot; shape=&quot;rect&quot; coords=&quot;630,20,820,65&quot; alt=&quot;Octoface&quot; data-maphilight=&quot;{&#39;stroke&#39;:false,&#39;fillColor&#39;:&#39;ff0000&#39;,&#39;fillOpacity&#39;:0.6}&quot; title=&quot;Metadata&quot; /&gt;
+&lt;/map&gt;
+</description>
+        <pubDate>Sun, 24 Jul 2016 19:37:06 +0800</pubDate>
+      </item>
     
       
 
@@ -44,9 +212,9 @@
 
 &lt;h3 id=&quot;section&quot;&gt;Там, где ты живешь, забыли, что у орла две головы.&lt;/h3&gt;
 
-&lt;p&gt;Из личного опыта поездок на запад России скажу - люди там другие (что на самом деле не удивительно). Проявляется везде и по мелочи. Но у них стойкое убеждение к зауралью, как к месту не пригодному для цивилизованной жизни и развития. За примерами далёко ходить не надо. Буквально вчера, сидя в гостинице, слушал пьяные истории мужика-машиниста с Воронежа о том, что у нас тут жизни нет. И что его не на шутку напугали медведи, во время одного рейса по БАМ (Байкало-Амурская магистраль).&lt;/p&gt;
+&lt;p&gt;Из личного опыта поездок на запад России скажу - люди там другие (что на самом деле неудивительно). Проявляется везде и по мелочи. Но у них стойкое убеждение к зауралью, как к месту не пригодному для цивилизованной жизни и развития. За примерами далёко ходить не надо. Буквально вчера, сидя в гостинице, слушал пьяные истории мужика-машиниста из Воронежа о том, что у нас тут жизни нет. И что его не на шутку напугали медведи, во время одного рейса по БАМ (Байкало-Амурская магистраль).&lt;/p&gt;
 
-&lt;p&gt;В повести тоже прослеживается противопоставление Запада и Востока страны. Выражается это через ту самую парочку. Через Машу и Женю. И стоит заметить, что это противопоставление нисколько не обидное и грубое, а скорее милое и доброе. Но иногда герои пытаются разойтись в пламенные речи.&lt;/p&gt;
+&lt;p&gt;В повести прослеживается противопоставление Запада и Востока страны. Выражается это через ту самую парочку. Через Машу и Женю. И стоит заметить, что это противопоставление нисколько не обидное и грубое, а скорее милое и доброе. Но иногда герои пытаются разойтись в пламенные речи.&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;И еще, что у вас там ничего не знают о России. Вам кажется, что, чем дальше от Москвы, тем жизнь слабее, и сначала действительно вроде как провал, а потом начинается совсем другое. Оно может быть и скудней, и голодней, но как-то святей, крепче… А вы так далеко от всего этого, не по расстоянию, конечно, а по духу, что если вдруг какой-нибудь остров сорвет с якоря штормом и поднесет к устью Невы, то там его не узнают.&lt;/p&gt;
@@ -57,7 +225,7 @@
 &lt;p&gt;Пока читал, постоянно накрывали воспоминания. Для меня, как для человека, далёкого от темы автомобилей, книга оказалась близкой. Вот почему.
 Повесть опубликована в 2009 году. В это время я ещё ходил в школу и жил в одном далёком военном городке (посёлке) в Усольском районе. Не смотря на скромные размеры в пол квадратного километра, размер отпечатка в моей памяти оказался неисправимо больше.&lt;/p&gt;
 
-&lt;p&gt;И как раз в то время у нас помешались на перегоне автомобилей с “Владика”. Так называют Владивосток (замечу, что на Западе “Владиком” называют город Владимир). В то время перед домом можно было заметить, что чуть ли треть машин с транзитными номерами. И у каждой обклеен как минимум бампер. Это для защиты от камней, потому что расстояния большие, а дороги никакие. Ради перегона местные военнослужащие брали отпуск! За это время гоняли во Владивосток, покупали машину, привозили её и продавали на Иркутском рынке. В то время военнослужащих не забрасывали деньгами. На “перегоне” сложно было много заработать, но популярность у такого вида деятельности была большая.&lt;/p&gt;
+&lt;p&gt;И как раз в то время у нас помешались на перегоне автомобилей с “Владика”. Так называют Владивосток (замечу, что на Западе “Владиком” называют город Владимир). В то время перед домом можно было заметить чуть ли треть машин с транзитными номерами. И у каждой обклеен как минимум бампер. Это для защиты от камней, потому что расстояния большие, а дороги никакие. Ради перегона местные военнослужащие брали отпуск! За это время гоняли во Владивосток, покупали машину, привозили её и продавали на Иркутском рынке. В то время военнослужащих не забрасывали деньгами. На “перегоне” сложно много заработать, но популярность у такого вида деятельности была большая.&lt;/p&gt;
 
 &lt;p&gt;Чтобы пригнать нормальную машину, нужно конечно же в этом разбираться, тогда был бум сайта Drom.ru. Взрослые говорили об автомобилях везде и, в связи с потребностью детей подражать взрослым, их чада тоже стали это обсуждать. В школе гремели споры. &lt;em&gt;“Какая машина круче? Надька? Да ты чего. У меня батя скоро Харька привезёт, вот это зверь!”&lt;/em&gt;.&lt;/p&gt;
 
@@ -206,7 +374,7 @@
 &lt;h3 id=&quot;jekyllsearchtjekyll&quot;&gt;&lt;a href=&quot;/search?t=jekyll&quot;&gt;#jekyll&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;Рассказы о технической стороне блога. Что и как работает, что и как поменялось или поменяется. В планах полностью переписать текущий шаблон и добавить возможность отслеживать читаемые книги.&lt;/p&gt;
 
-&lt;h3 id=&quot;progsearchtprog-golangsearchtgolang-javasearchtjava-iossearchtios-androidsearchtandroid-phpsearchtphp-clojuresearchtclojure-pythonsearchtpython&quot;&gt;&lt;a href=&quot;/search?t=prog&quot;&gt;#prog&lt;/a&gt; &lt;a href=&quot;/search?t=golang&quot;&gt;#golang&lt;/a&gt; &lt;a href=&quot;/search?t=java&quot;&gt;#java&lt;/a&gt; &lt;a href=&quot;/search?t=ios&quot;&gt;#ios&lt;/a&gt; &lt;a href=&quot;/search?t=android&quot;&gt;#android&lt;/a&gt; &lt;a href=&quot;/search?t=php&quot;&gt;#php&lt;/a&gt; &lt;a href=&quot;/search?t=clojure&quot;&gt;#clojure&lt;/a&gt; &lt;a href=&quot;/search?t=python&quot;&gt;#python&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id=&quot;progsearchtprog-golangsearchtgolang-javasearchtjava-iossearchtios-androidsearchtandroid-phpsearchtphp-clojuresearchtclojure-pythonsearchtpython-swiftsearchtswift&quot;&gt;&lt;a href=&quot;/search?t=prog&quot;&gt;#prog&lt;/a&gt; &lt;a href=&quot;/search?t=golang&quot;&gt;#golang&lt;/a&gt; &lt;a href=&quot;/search?t=java&quot;&gt;#java&lt;/a&gt; &lt;a href=&quot;/search?t=ios&quot;&gt;#ios&lt;/a&gt; &lt;a href=&quot;/search?t=android&quot;&gt;#android&lt;/a&gt; &lt;a href=&quot;/search?t=php&quot;&gt;#php&lt;/a&gt; &lt;a href=&quot;/search?t=clojure&quot;&gt;#clojure&lt;/a&gt; &lt;a href=&quot;/search?t=python&quot;&gt;#python&lt;/a&gt; &lt;a href=&quot;/search?t=swift&quot;&gt;#swift&lt;/a&gt;&lt;/h3&gt;
 
 &lt;p&gt;Всё что связано с программированием. Нытьё, рецепты, моя борьба с фреймворками и мобильными платформами. Всё тут. Скорее всего это будет самая частая рубрика. Буду стараться писать по любой проблеме.&lt;/p&gt;
 
