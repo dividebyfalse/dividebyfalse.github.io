@@ -5,7 +5,7 @@
     <atom:link href="http://divideby.ml/feed.xml" rel="self" type="application/rss+xml"/>
     <link>http://divideby.ml/</link>
     <description>Обо всём и сразу.</description>
-    <pubDate>Sun, 24 Jul 2016 19:43:14 +0800</pubDate>
+    <pubDate>Sun, 24 Jul 2016 19:48:25 +0800</pubDate>
     
       
 
@@ -18,7 +18,9 @@
         <guid isPermaLink="true">http://divideby.ml/2016/07/24/exalarm/</guid>
         <description>&lt;p&gt;&lt;img src=&quot;/images/exAlarm/Chapter01/0.jpg&quot; alt=&quot;start&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Attention&lt;/strong&gt; В iOS 10 будет обновленный механизм уведомлений, поэтому данный цикл постов потерял актуальность во время написания. Так что отложу до выхода iOS 10. А пока можете поглядеть, как это могло бы быть на  iOS 9.3. Кстати вводится новый тег &lt;strong&gt;&lt;a href=&quot;/search?t=draft&quot;&gt;#draft&lt;/a&gt;&lt;/strong&gt;. Обозначает посты, которые недописаны, и не имеют мотивов быть дописаными, но выложить хочется. Именно поэтому данный пост часто скатывается к набору картинок и кода. Потому что подробно объяснять нет смысла, так как многое изменится. Орфография, пунктуция и прочее сохранены с момента получения информации об iOS 10. Добавлены лишь небольшие комментарии. Так что возможно много ошибок и мусора в тексте.&lt;/p&gt;
+&lt;h2 id=&quot;attention&quot;&gt;Attention&lt;/h2&gt;
+
+&lt;p&gt;В iOS 10 будет обновленный механизм уведомлений, поэтому данный цикл постов потерял актуальность во время написания. Так что отложу до выхода iOS 10. А пока можете поглядеть, как это могло бы быть на  iOS 9.3. Кстати вводится новый тег &lt;strong&gt;&lt;a href=&quot;/search?t=draft&quot;&gt;#draft&lt;/a&gt;&lt;/strong&gt;. Обозначает посты, которые недописаны, и не имеют мотивов быть дописаными, но выложить хочется. Именно поэтому данный пост часто скатывается к набору картинок и кода. Потому что подробно объяснять нет смысла, так как многое изменится. Орфография, пунктуция и прочее сохранены с момента получения информации об iOS 10. Добавлены лишь небольшие комментарии. Так что возможно много ошибок и мусора в тексте.&lt;/p&gt;
 
 &lt;p&gt;И ещё. Для тех, кто хоть чуточку шарит, достаточно будт глянуть код (которого вот прям совсем чуть-чуть) и не читать многобукв.&lt;/p&gt;
 
@@ -149,7 +151,9 @@
 
 &lt;h3 id=&quot;section-9&quot;&gt;Итог&lt;/h3&gt;
 
-&lt;p&gt;Данный пост станет абсолютно бесполезным через месяц (а я как раз через месяц и хотел закончить цикл постов). Пусть это будет мне уроком. Но я хоть потренировался в написании технотекстов и немножко прокачал блог (всплывающие подсказки и подсвечивание областей картинок). Хотя тут ещё писать и писать, а для полного подробного объяснения ещё очень далеко. Ну да ладно. Спасибо, что читаете. Всего доброго, не болейте &lt;img class=&quot;emoji&quot; title=&quot;:wink:&quot; alt=&quot;:wink:&quot; src=&quot;https://assets.github.com/images/icons/emoji/unicode/1f609.png&quot; height=&quot;20&quot; width=&quot;20&quot; align=&quot;absmiddle&quot; /&gt;!&lt;/p&gt;
+&lt;p&gt;Данный пост станет абсолютно бесполезным через месяц (а я как раз через месяц и хотел закончить цикл постов). Пусть это будет мне уроком. Но я хоть потренировался в написании технотекстов и немножко прокачал блог (всплывающие подсказки и подсвечивание областей картинок). Хотя тут ещё писать и писать, а для полного подробного объяснения ещё очень далеко. Ну да ладно. Спасибо, что читаете. Всего доброго, не болейте!&lt;/p&gt;
+
+&lt;p&gt;P.S. Для быстрого старта рекомендую курс c Udemy.com “The Complete IOS 9 Swift 2.0 Guide - Make 20 Applications”. Кто ищет бесплатно, тот всегда найдет &lt;img class=&quot;emoji&quot; title=&quot;:wink:&quot; alt=&quot;:wink:&quot; src=&quot;https://assets.github.com/images/icons/emoji/unicode/1f609.png&quot; height=&quot;20&quot; width=&quot;20&quot; align=&quot;absmiddle&quot; /&gt;.&lt;/p&gt;
 
 &lt;map name=&quot;genlinks0&quot;&gt;
     &lt;area id=&quot;rct0&quot; href=&quot;#&quot; shape=&quot;rect&quot; coords=&quot;120,300,520,350&quot; alt=&quot;Octoface&quot; data-maphilight=&quot;{&#39;stroke&#39;:false,&#39;fillColor&#39;:&#39;ff0000&#39;,&#39;fillOpacity&#39;:0.6}&quot; title=&quot;Metadata&quot; /&gt;
